@@ -1,0 +1,20 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="example-form">
+  <mat-form-field class="example-full-width">
+    <mat-label>Source</mat-label>
+    <input matInput placeholder="source" formControlName="source">
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <mat-label>Date</mat-label>
+    <input matInput formControlName="date" [matDatepicker]="picker">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <br>
+  <button [disabled]="!form.valid"
+          type="submit"
+          mat-raised-button
+          color="primary">Enregistrer
+  </button>
+</form>

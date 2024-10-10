@@ -1,0 +1,14 @@
+.buttonCreate{
+  margin-top: 1%;
+  float: right;
+  margin-bottom: 1%;
+  margin-right: 1%;
+}
+table{
+  width: 80%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}

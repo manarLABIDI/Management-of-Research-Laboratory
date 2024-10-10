@@ -1,0 +1,32 @@
+<form [formGroup]="form" (ngSubmit)="submit()" class="example-form">
+
+  <mat-form-field class="example-full-width">
+    <mat-label>TITLE</mat-label>
+    <input matInput placeholder="titre" formControlName="titre">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>TYPE</mat-label>
+    <input matInput placeholder="type" formControlName="type">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>DATE APPARITION</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="dateApparition">
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>SOURCE PDF</mat-label>
+    <input matInput placeholder="sourcePdf" formControlName="sourcePdf">
+  </mat-form-field>
+
+
+  <mat-form-field class="example-full-width">
+    <mat-label>LINK</mat-label>
+    <input matInput placeholder="link" formControlName="lien">
+  </mat-form-field>
+
+  <button type="submit" mat-raised-button color="primary">Enregistrer</button>
+</form>

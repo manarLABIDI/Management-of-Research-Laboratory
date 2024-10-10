@@ -1,0 +1,26 @@
+/* styles.css or component-specific styles */
+.edit-button {
+   
+    color: #110101; /* White text color */
+    border: none; /* Remove button border */
+    padding: 8px 16px; /* Add padding for better visual appearance */
+    margin-right: 8px; /* Add right margin to create space between buttons */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    
+  }
+  
+  .delete-button {
+    
+    color: #ff2222; /* White text color */
+    border: none; /* Remove button border */
+    padding: 8px 16px; /* Add padding for better visual appearance */
+    cursor: pointer; /* Change cursor to pointer on hover */
+   
+  }
+  
+  /* Add hover styles for better user feedback */
+  .edit-button:hover,
+  .delete-button:hover {
+    opacity: 0.8; /* Reduce opacity on hover */
+  }
+  

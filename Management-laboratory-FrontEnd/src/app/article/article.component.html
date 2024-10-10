@@ -1,0 +1,67 @@
+<div fxLayout="row" fxLayoutAlign="end center">
+  <button class="buttonCreate" routerLink="/createArticle" mat-raised-button color="primary">create new Article</button>
+<br><br></div>()
+<mat-form-field>
+  <mat-label>Filter</mat-label>
+  <input matInput (keyup)="applyFilter($event)" placeholder="Filtrer" #input>
+</mat-form-field>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> TITLE </th>
+    <td mat-cell *matCellDef="let element"> {{element.titre}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef> TYPE </th>
+    <td mat-cell *matCellDef="let element"> {{element.type}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="dateApparition">
+    <th mat-header-cell *matHeaderCellDef>DATE APPARITION</th>
+    <td mat-cell *matCellDef="let element"> {{element.dateApparition}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="sourcePdf">
+    <th mat-header-cell *matHeaderCellDef> SOURCE PDF </th>
+    <td mat-cell *matCellDef="let element"> {{element.sourcePdf}} </td>
+  </ng-container>
+
+
+  <ng-container matColumnDef="link">
+    <th mat-header-cell *matHeaderCellDef> LINK </th>
+    <td mat-cell *matCellDef="let element">
+      <a href="{{element.lien}}" target="_blank">{{element.titre}}</a>
+       </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef></th>
+    <td mat-cell *matCellDef="let element">
+      <button (click)="delete(element.id)"  mat-button color="warn" aria-label="Example icon button with a delete icon">
+        <mat-icon >delete</mat-icon>
+      </button>
+      <button [routerLink]="['/article/edit', element.id]" mat-button color="primary" aria-label="Example icon button with a delete icon">
+        <mat-icon >edit</mat-icon>
+      </button>
+      <button [routerLink]="['/affect', element.id]"  mat-button color="primary" aria-label="Example icon button with a delete icon">
+        <mat-icon >add_task</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

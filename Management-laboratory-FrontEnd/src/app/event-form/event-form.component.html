@@ -1,0 +1,29 @@
+<h2>Ajouter un evenement</h2>
+
+<form *ngIf="form" [formGroup]="form" (ngSubmit)="OnSub()" class="centered-form">
+
+  <p>
+    <mat-form-field appearance="fill" class="large-input">
+      <mat-label>titre</mat-label>
+      <input matInput placeholder="Placeholder" formControlName="titre" />
+    </mat-form-field>
+  </p>
+
+  <mat-form-field class="large-input">
+    <mat-label>Date d'evenement</mat-label>
+    <input matInput [matDatepicker]="picker" formControlName="date" />
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <p>
+    <mat-form-field appearance="fill" class="large-input">
+      <mat-label>lieu</mat-label>
+      <input matInput placeholder="Placeholder" formControlName="lieu" />
+    </mat-form-field>
+  </p>
+
+  <br />
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>

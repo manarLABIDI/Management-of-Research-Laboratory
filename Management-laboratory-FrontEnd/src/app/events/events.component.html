@@ -1,0 +1,62 @@
+<div fxLayout="row" fxLayoutAlign="end center">
+    <button class="buttonCreate"  mat-raised-button style="background-color: blue; color: white;" routerLink="/createEvent">
+      Create new Event
+    </button>
+  </div>
+  
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Title Column -->
+    <ng-container matColumnDef="titre">
+      <th mat-header-cell *matHeaderCellDef> Title </th>
+      <td mat-cell *matCellDef="let element">{{element.titre}} </td>
+    </ng-container>
+  
+    <!-- Date Debut Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date</th>
+      <td mat-cell *matCellDef="let element"> {{element.date| date:'M/d/yy'}}</td>
+    </ng-container>
+  
+    <!-- Date Fin Column 
+    <ng-container matColumnDef="dateFin">
+      <th mat-header-cell *matHeaderCellDef> Date de fin </th>
+      <td mat-cell *matCellDef="let element"> {{element.dateFin| date:'M/d/yy'}}</td>
+    </ng-container>-->
+  
+
+
+
+    
+  
+    <!-- Lieu Column -->
+    <ng-container matColumnDef="lieu">
+      <th mat-header-cell *matHeaderCellDef> Lieu </th>
+      <td mat-cell *matCellDef="let element"> {{element.lieu}} </td>
+    </ng-container>
+
+      
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element"  mat-button color="warn" aria-label="Example icon button with a delete icon">
+        <button routerLink="/{{ element.id }}/edit/event"mat-button color="primary" aria-label="Example icon button with a delete icon">
+          <mat-icon color="accent">edit</mat-icon>
+        </button>
+        <button (click)="Delete(element.id)">
+          <mat-icon color="warn">delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+  
+    <!-- Définir les lignes du tableau -->
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  

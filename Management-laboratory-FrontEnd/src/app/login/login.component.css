@@ -1,0 +1,28 @@
+/* Ajoutez ces styles dans votre fichier CSS global ou dans le composant spécifique */
+mat-card {
+    width: 300px; /* Ajustez la largeur selon vos besoins */
+    margin: auto;
+    margin-top: 50px; /* Ajustez la marge supérieure selon vos besoins */
+    text-align: center;
+  }
+  
+  mat-card-content {
+    font-size: 24px; /* Ajustez la taille de la police selon vos besoins */
+    font-weight: bold;
+    margin-bottom: 20px; /* Ajustez la marge inférieure selon vos besoins */
+  }
+  
+  button {
+    background-color: #4285f4; /* Couleur de fond du bouton (couleur Google) */
+    color: white; /* Couleur du texte du bouton */
+    padding: 10px 20px; /* Ajustez le rembourrage selon vos besoins */
+    font-size: 16px; /* Ajustez la taille de la police selon vos besoins */
+    border: none;
+    cursor: pointer;
+    border-radius: 5px; /* Ajustez le rayon de la bordure selon vos besoins */
+  }
+  
+  button:hover {
+    background-color: #357ae8; /* Couleur de fond du bouton au survol */
+  }
+  

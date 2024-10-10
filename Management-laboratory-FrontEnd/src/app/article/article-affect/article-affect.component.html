@@ -1,0 +1,11 @@
+<h4>Séléctionner un auteur</h4>
+<mat-form-field appearance="fill">
+  <mat-label>Selected Member</mat-label>
+  <mat-select [(ngModel)]="selectedValue" name="auteur">
+    <mat-option *ngFor="let member of members" [value]="member.id">
+      {{member.prenom}} {{member.nom}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+<br>
+<button class="buttonCreate" (click)="affect(selectedValue)" mat-raised-button color="primary">ok</button>

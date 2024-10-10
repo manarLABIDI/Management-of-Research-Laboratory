@@ -1,0 +1,61 @@
+<br />
+<h4>Member Form</h4>
+
+<form [formGroup]="form" (ngSubmit)="OnSub()">
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Cin </mat-label>
+      <input matInput placeholder="cin" formControlName="cin" />
+      <mat-hint> </mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Nom</mat-label>
+      <input matInput placeholder="nom" formControlName="nom" />
+      <mat-hint> </mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Prenom</mat-label>
+      <input matInput placeholder="prenom" formControlName="prenom" />
+      <mat-hint> </mat-hint>
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Cv</mat-label>
+      <input matInput placeholder="cv" formControlName="cv" />
+      <mat-hint> </mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Type</mat-label>
+      <mat-select formControlName="type">
+        <mat-option value="ens">Ens</mat-option>
+        <mat-option value="etud">Etud</mat-option>
+      </mat-select>
+      <mat-hint> </mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field>
+      <mat-label>Choose a birth date</mat-label>
+      <input
+        matInput
+        formControlName="dateNaissence"
+        [matDatepicker]="picker"
+      />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </p>
+  <button type="submit" mat-button color="primary">Create</button>
+</form>
